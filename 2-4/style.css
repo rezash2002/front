@@ -1,0 +1,49 @@
+
+.content{
+    box-shadow: 1px 1px 2px #a4a4a4;
+    background-color: #ececec;
+    padding: 10px;
+    margin: 5px auto;
+}
+.content p{
+    margin: 5px;
+}
+.btn{
+    overflow: hidden;
+    transition: background 400ms;
+    cursor: pointer;
+    margin: 8px 0 0 8px;
+    width: fit-content;
+    height: 40px;
+    font-weight: bold;
+    min-width: 64px;
+    min-height: 40px;
+    border: none;
+    border-radius: 2em;
+}
+.btn:disabled{
+    filter: grayscale(100%);
+}
+
+.btn:hover{
+    filter: brightness(90%);
+    transition: 0.2s;
+}
+.btn:active{
+    filter: brightness(100%);
+}
+.primary{
+    background-color: #386a20;
+    border: 1px solid #386a20;
+    color: #386a20;
+}
+.secondary{
+    background-color: #711681;
+    border: 1px solid #711681;
+    color: #711681;
+}
+
+.outlined{
+    padding: 0 24px;
+    background-color: inherit;
+}
