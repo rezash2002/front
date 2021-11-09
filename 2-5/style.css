@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+:root{
+    /* Light primary colors */
+    --lightPrimeryColor: 103, 80, 164;
+    --lightPrimeryOnColor: 255, 255, 255;
+    --lightPrimeryContainerOnColor: 33, 0, 94;
+
+    /* Light secondary colors */
+    --lightSecondaryContainerColor: 232, 222, 248;
+    --lightSecondaryContainerOnColor: 30, 25, 43;
+
+    /* Light surface colors */
+    --lightSurfaceColor: 255, 251, 254;
+    --lightSurfaceOnColor: 28, 27, 31;
+
+    --lightOutlineColor: 121, 116, 126;
+
+}
+.container{
+    margin: 50px auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px #a4a4a4;
+    width: fit-content;
+    height: auto;
+    padding: 10px;
+}
+.content{
+    box-shadow: 1px 1px 2px #a4a4a4;
+    background-color: #ececec;
+    padding: 10px;
+    margin: 5px auto;
+}
+.content p{
+    margin: 5px;
+}
+a[class*="btn"]{
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.btn{
+    font-family: 'Roboto Medium', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+    line-height: 40px;
+    transition: all 400ms;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 8px 8px 0 0;
+    width: fit-content;
+    height: 40px;
+    font-weight: 500;
+    min-width: 64px;
+    min-height: 40px;
+    border-radius: 3em;
+}
+.btn span i{
+    vertical-align: middle;
+}
+.btn i:first-child{
+    margin: 0 8px 0 -8px;
+}
+.btn i:last-child{
+    margin: 0 -8px 0 8px;
+}
+.btn:active{
+    transition: all 100ms;
+}
+
+.elevated{
+    padding: 0 24px;
+    border: none;
+    color: rgba(var(--lightPrimeryColor));
+    background-color: rgba(var(--lightSurfaceColor));
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);                       /* Custom elevation lvl 1 */
+}
+.elevated:disabled{
+    background-color: rgba(var(--lightSurfaceOnColor), 12%);
+    color: rgba(var(--lightSurfaceOnColor), 38%);
+    box-shadow: none;
+}
+.elevated:not(:active):enabled:hover, a.elevated:not(:active):hover{
+    /* Not specified in M3 */
+    filter: brightness(85%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);                       /* Custom elevation lvl 2 */
+}
+.elevated:focus{
+    /* Not specified in M3 */
+}
+.elevated:active{
+    background-color: rgba(var(--lightSurfaceColor));
+    /* Not specified in M3 */
+}
+
+.filled{
+    background-color: rgba(var(--lightPrimeryColor));
+    color: rgba(var(--lightPrimeryOnColor));
+    padding: 0 24px;
+    border: none;
+}
+.filled:disabled{
+    background-color: rgba(var(--lightSurfaceOnColor), 12%);
+    color: rgba(var(--lightSurfaceOnColor), 38%);
+}
+.filled:not(:active):enabled:hover, a.filled:not(:active):hover{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);                       /* Custom elevation lvl 1 */
+}
+.filled:focus{
+    box-shadow: none;                                               /* Elevation lvl 0
+    /* Not specified in M3 */
+
+}
+.filled:active{
+    box-shadow: none;
+    /* Not specified in M3 */
+}
+
+.filled-tonal{
+    padding: 0 24px;
+    border: none;
+    background-color: rgba(var(--lightSecondaryContainerColor));
+    color: rgb(var(--lightSecondaryContainerOnColor));
+}
+.filled-tonal:disabled{
+    background-color: rgba(var(--lightSurfaceOnColor), 12%);
+    color: rgba(var(--lightSurfaceOnColor), 38%);
+}
+.filled-tonal:not(:active):enabled:hover, a.filled-tonal:not(:active):hover{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);                       /* Custom elevation lvl 1 */
+    /* Not specified in M3 */
+}
+.filled-tonal:focus{
+    /* Not specified in M3 */
+}
+.filled-tonal:active{
+    /* Not specified in M3 */
+}
+
+.outlined{
+    padding: 0 24px;
+    color: rgba(var(--lightPrimeryColor));
+    border: 1px solid rgba(var(--lightOutlineColor));
+    background-color: rgba(0,0,0,0%);
+}
+.outlined:disabled{
+    color: rgba(var(--lightSurfaceOnColor), 38%);
+    border: 1px solid rgba(var(--lightOutlineColor), 12%);
+}
+.outlined:not(:active):enabled:hover, a.outlined:not(:active):hover{
+    background-color: rgba(var(--lightPrimeryColor), 12%);
+    /* Not specified in M3 */
+}
+.outlined:focus{
+    /* Not specified in M3 */
+}
+.outlined:active{
+    /* Not specified in M3 */
+}
+
+.text{
+    color: rgba(var(--lightPrimeryColor));
+    padding: 0 12px;
+    border: none;
+    background-color: rgba(0,0,0,0%);
+}
+.text i:first-child{
+    margin: 0 8px 0 0;
+}
+.text span:last-child{
+    margin-right: 4px;
+}
+.text i:last-child{
+    margin: 0 0 0 8px;
+}
+.text span:first-child{
+    margin-left: 4px;
+}
+.text:disabled{
+    color: rgba(var(--lightSurfaceOnColor), 38%);
+}
+.text:enabled:hover, a.text:hover{
+    /* Not specified in M3 */
+    background-color: rgba(var(--lightPrimeryColor), 26%);
+}
+.text:focus{
+    /* Not specified in M3 */
+}
+.text:active{
+    /* Not specified in M3 */
+}
+
+span.ripple {
+    filter: brightness(150%);
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 800ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}

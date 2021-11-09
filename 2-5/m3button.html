@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>m3 button</title>
+    <link href="style.css" rel = "stylesheet">
+    <script src="https://kit.fontawesome.com/f5a43cdea2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class = "content">
+        <p>Enabled: </p>
+        <button type = "button" class = "btn primary elevated" >Elevated</button>
+
+        <button type = "button" class = "btn primary filled" >
+            <i class="fas fa-check"></i>
+            <span>Filled</span>
+        </button>
+
+        <button type = "button" class = "btn primary filled-tonal" >
+            <span>Filled tonal</span>
+            <i class="far fa-star"></i>
+        </button>
+
+        <button type = "button" class = "btn primary outlined" >
+            <span>Outlined</span>
+            <i class="far fa-star"></i>
+        </button>
+
+        <button type = "button" class = "btn primary text" icon = "true">
+            <i class="fas fa-plus"></i>
+            <span>Text</span>
+        </button>
+    </div>
+
+    <div class = "content">
+        <p>Disabled: </p>
+        <button type = "button" class = "btn primary elevated" disabled>Elevated</button>
+
+        <button type = "button" class = "btn primary filled" disabled>
+            <i class="fas fa-check"></i>
+            <span>Filled</span>
+        </button>
+
+        <button type = "button" class = "btn primary filled-tonal" disabled>
+            <span>Filled tonal</span>
+            <i class="far fa-star"></i>
+        </button>
+
+        <button type = "button" class = "btn primary outlined" disabled>
+            <span>Outlined</span>
+            <i class="far fa-star"></i>
+        </button>
+
+        <button type = "button" class = "btn primary text" icon = "true" disabled>
+            <i class="fas fa-plus"></i>
+            <span>Text</span>
+        </button>
+    </div>
+
+    <div class = "content">
+        <p>Anchor: </p>
+        <a href = "/" class = "btn primary elevated">Elevated</a>
+
+        <a href = "/" class = "btn primary filled">
+            <i class="fas fa-check"></i>
+            <span>Filled</span>
+        </a>
+
+        <a class = "btn primary filled-tonal">
+            <span>Filled tonal</span>
+            <i class="far fa-star"></i>
+        </a>
+
+        <a class = "btn primary outlined">
+            <span>Outlined</span>
+            <i class="far fa-star"></i>
+        </a>
+
+        <a class = "btn primary text" icon = "true">
+            <i class="fas fa-plus"></i>
+            <span>Text</span>
+        </a>
+
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const size = Math.max(button.clientWidth, button.clientHeight);
+        const radius = size / 2;
+
+        let vpOffset = button.getBoundingClientRect()
+
+        circle.style.width = circle.style.height = `${size}px`;
+        circle.style.left = `${event.pageX - scrollX - (vpOffset.left + radius)}px`;
+        circle.style.top = `${event.pageY - scrollY - (vpOffset.top + radius)}px`;
+        circle.classList.add("ripple");
+
+        const ripple = button.getElementsByClassName("ripple")[0];
+
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.insertBefore(circle, button.children[1]);
+    }
+
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+        button.addEventListener("click", createRipple);
+    }
+    const anchors = document.getElementsByTagName('a');
+    for (const anchor of anchors) {
+        anchor.addEventListener("click", createRipple);
+    }
+</script>
+</body>
+</html>
